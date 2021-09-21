@@ -13,16 +13,32 @@ This is an R Markdown document. Markdown is a simple formatting syntax for autho
 
 When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
 
-```{r cars}
-summary(cars)
+#Homework 2
+
+#challenge 1
+#ppois is used to find the probability of something equal to or less than, and can be switch to equal to or more with the command lower = false
+```{r}
+ppois(8, lambda = 15, lower = FALSE)
+```
+#challenge 2
+#you can use ppois or dpois here and get the same answer because nothing is less than 0
+```{r}
+ppois(0, lambda = 15)
 ```
 
-## Including Plots
-
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
+#challenge 3
+#dpois calculates the probability of one random variable in a given range
+```{r}
+dpois(3, lambda = 15)
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+#challenge 4 
+#using code from module 8 here and changing the x and l values
+```{r}
+x <- 0:30
+l = 15
+probset <- dpois(x = x, lambda = l)
+barplot(probset, names.arg = x, space = 0, xlab = "x", ylab = "Pr(X = x)", main = "Probability Mass Function")
+```
+
+#challenge 5
