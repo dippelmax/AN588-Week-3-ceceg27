@@ -16,7 +16,7 @@ When you click the **Knit** button a document will be generated that includes bo
 #Homework 2
 
 #challenge 1
-#ppois is used to find the probability of something equal to or less than, and can be switch to equal to or more with the command lower = false
+#ppois is used to find the probability of something equal to or less than, and can be switched to equal to or more with the command lower = false
 ```{r}
 ppois(8, lambda = 15, lower = FALSE)
 ```
