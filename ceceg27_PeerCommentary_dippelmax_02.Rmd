@@ -1,0 +1,73 @@
+---
+title: "Untitled"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+#Homework 2
+
+#challenge 1
+#ppois is used to find the probability of something equal to or less than, and can be switched to equal to or more with the command lower = false
+```{r}
+ppois(8, lambda = 15, lower = FALSE)
+
+### I got the same answer
+```
+#challenge 2
+#you can use ppois or dpois here and get the same answer because nothing is less than 0
+```{r}
+ppois(0, lambda = 15)
+
+### I got the same answer
+```
+
+#challenge 3
+#dpois calculates the probability of one random variable in a given range
+```{r}
+dpois(3, lambda = 15)
+
+### I got the same answer
+```
+
+#challenge 4 
+#using code from module 8 here and changing the x and l values
+```{r}
+x <- 0:30
+l = 15
+probset <- dpois(x = x, lambda = l)
+barplot(probset, names.arg = x, space = 0, xlab = "x", ylab = "Pr(X = x)", main = "Probability Mass Function", col = "darkblue")
+
+### Nice color on the graph, looks good content wise also
+```
+
+#challenge 5
+#rpois can be used to generate numbers for a given poisons distribution
+```{r}
+set.seed(2)
+
+monkeys <- data.frame('data' = rpois(104, 15))
+
+hist(monkeys$data,
+main="Histogram for 104 simulated saturdays",
+xlab="x",
+ylab = "Pr(X = x)",
+xlim=c(0,30),
+col="darkmagenta",
+freq=FALSE
+)
+
+### looks great. Really smart with the data.frame and rpois. I couldn't figure it out and my graph looks really strange. Graph also looks great with label, a title and color. 
+
+```
+#the simulated histogram is much more centered around the mean and less evenly distirbuted than the probability mass function, though it generally takes on a similar shape. I assume it would come to resemble the PMF as n increased. 
+
+
